@@ -1,0 +1,28 @@
+﻿生成启动时间为 2015/5/5 14:29:18。
+     1>项目“E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\learning1\learning1.vcxproj”在节点 2 上(Build 个目标)。
+     1>CustomBuild:
+         Moc'ing learning1.h...
+         Uic'ing learning1.ui...
+         Could not create output file
+         Rcc'ing learning1.qrc...
+     1>RCC : warning : No resources in 'E:\妗岄潰\姣曚笟璁捐\Qt\WorkSpace\Learning\learning\learning1\learning1.qrc'.
+         
+       ClCompile:
+         D:\Program Files (x86)\VS2013\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /ID:\Qt\5.4\msvc2013_64\include /I.\GeneratedFiles\Release /ID:\Qt\5.4\msvc2013_64\include\QtCore /ID:\Qt\5.4\msvc2013_64\include\QtGui /ID:\Qt\5.4\msvc2013_64\include\QtWidgets /nologo /W1 /WX- /O2 /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt 1.1_hello.cpp GeneratedFiles\Release\moc_learning1.cpp learning1.cpp
+         1.1_hello.cpp
+         moc_learning1.cpp
+         learning1.cpp
+         正在生成代码...
+         D:\Program Files (x86)\VS2013\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /ID:\Qt\5.4\msvc2013_64\include /I.\GeneratedFiles\Release /ID:\Qt\5.4\msvc2013_64\include\QtCore /ID:\Qt\5.4\msvc2013_64\include\QtGui /ID:\Qt\5.4\msvc2013_64\include\QtWidgets /nologo /W1 /WX- /O2 /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\qrc_learning1.cpp
+         qrc_learning1.cpp
+       Link:
+         D:\Program Files (x86)\VS2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\Win32\Release\\learning1.exe" /NOLOGO /LIBPATH:D:\Qt\5.4\msvc2013_64\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Widgets.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\Win32\Release\learning1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\Win32\Release\learning1.lib" /MACHINE:X86 /SAFESEH Release\1.1_hello.obj
+         Release\qrc_learning1.obj
+         Release\moc_learning1.obj
+         Release\learning1.obj
+     1>Qt5Widgets.lib(Qt5Widgets.dll) : fatal error LNK1112: 模块计算机类型“x64”与目标计算机类型“X86”冲突
+     1>已完成生成项目“E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\learning1\learning1.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:04.34
