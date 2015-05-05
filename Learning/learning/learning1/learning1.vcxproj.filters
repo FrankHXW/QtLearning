@@ -55,7 +55,7 @@
     <ClCompile Include="GeneratedFiles\Release\moc_learning1.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="layout.cpp">
+    <ClCompile Include="1.1_hello.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
