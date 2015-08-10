@@ -38,12 +38,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_learning2.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_learning2.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\qrc_learning2.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
@@ -65,11 +59,17 @@
     <ClCompile Include="GeneratedFiles\Release\moc_2.3_gotocelldialog.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="2.4_sortdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_2.4_sortdialog.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_2.4_sortdialog.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="learning2.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="learning2.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
@@ -80,6 +80,9 @@
       <Filter>Source Files</Filter>
     </CustomBuild>
     <CustomBuild Include="2.3_gotocelldialog.h">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="2.4_sortdialog.h">
       <Filter>Source Files</Filter>
     </CustomBuild>
   </ItemGroup>

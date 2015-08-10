@@ -1,25 +1,20 @@
-﻿生成启动时间为 2015/5/5 23:35:42。
-     1>项目“E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\learning2\learning2.vcxproj”在节点 2 上(Build 个目标)。
-     1>CustomBuild:
-         Moc'ing 2.3_gotocelldialog.h...
-       ClCompile:
-         D:\Program Files (x86)\VS2013\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Qt\5.4\msvc2013_64\include /I.\GeneratedFiles\Release /ID:\Qt\5.4\msvc2013_64\include\QtCore /ID:\Qt\5.4\msvc2013_64\include\QtGui /ID:\Qt\5.4\msvc2013_64\include\QtWidgets /nologo /W1 /WX- /O2 /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt 2.1_finddialog.cpp 2.3_gotocelldialog.cpp GeneratedFiles\Release\moc_2.3_gotocelldialog.cpp main.cpp
-         2.1_finddialog.cpp
-         2.3_gotocelldialog.cpp
-         moc_2.3_gotocelldialog.cpp
+﻿生成启动时间为 2015/8/10 17:20:18。
+     1>项目“E:\桌面\Qt\WorkSpace\Learning\learning\learning2\learning2.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\VS2013\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Qt\5.4\msvc2013_64\include /I.\GeneratedFiles\Release /ID:\Qt\5.4\msvc2013_64\include\QtCore /ID:\Qt\5.4\msvc2013_64\include\QtGui /ID:\Qt\5.4\msvc2013_64\include\QtWidgets /nologo /W1 /WX- /O2 /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt main.cpp
          main.cpp
-         正在生成代码...
        Link:
-         D:\Program Files (x86)\VS2013\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\x64\Release\\learning2.exe" /NOLOGO /LIBPATH:D:\Qt\5.4\msvc2013_64\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Widgets.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\x64\Release\learning2.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\x64\Release\learning2.lib" /MACHINE:X64 x64\Release\2.1_finddialog.obj
+         D:\Program Files (x86)\VS2013\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\桌面\Qt\WorkSpace\Learning\learning\x64\Release\\learning2.exe" /NOLOGO /LIBPATH:D:\Qt\5.4\msvc2013_64\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Widgets.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"E:\桌面\Qt\WorkSpace\Learning\learning\x64\Release\learning2.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\桌面\Qt\WorkSpace\Learning\learning\x64\Release\learning2.lib" /MACHINE:X64 x64\Release\2.1_finddialog.obj
          x64\Release\2.3_gotocelldialog.obj
+         x64\Release\2.4_sortdialog.obj
          x64\Release\qrc_learning2.obj
          x64\Release\moc_2.1_finddialog.obj
          x64\Release\moc_2.3_gotocelldialog.obj
-         x64\Release\moc_learning2.obj
+         x64\Release\moc_2.4_sortdialog.obj
          x64\Release\main.obj
-         learning2.vcxproj -> E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\x64\Release\learning2.exe
-     1>已完成生成项目“E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\learning2\learning2.vcxproj”(Build 个目标)的操作。
+         learning2.vcxproj -> E:\桌面\Qt\WorkSpace\Learning\learning\x64\Release\learning2.exe
+     1>已完成生成项目“E:\桌面\Qt\WorkSpace\Learning\learning\learning2\learning2.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:04.64
+已用时间 00:00:01.26

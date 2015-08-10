@@ -1,9 +1,16 @@
-﻿生成启动时间为 2015/5/5 14:30:25。
-     1>项目“E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\learning1\learning1.vcxproj”在节点 2 上(Build 个目标)。
-     1>Link:
-         learning1.vcxproj -> E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\x64\Release\learning1.exe
-     1>已完成生成项目“E:\桌面\毕业设计\Qt\WorkSpace\Learning\learning\learning1\learning1.vcxproj”(Build 个目标)的操作。
+﻿生成启动时间为 2015/8/10 13:08:26。
+     1>项目“E:\桌面\Qt\WorkSpace\Learning\learning\learning1\learning1.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\VS2013\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Qt\5.4\msvc2013_64\include /I.\GeneratedFiles\Release /ID:\Qt\5.4\msvc2013_64\include\QtCore /ID:\Qt\5.4\msvc2013_64\include\QtGui /ID:\Qt\5.4\msvc2013_64\include\QtWidgets /nologo /W1 /WX- /O2 /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt 1.1_hello.cpp
+         1.1_hello.cpp
+       Link:
+         D:\Program Files (x86)\VS2013\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\桌面\Qt\WorkSpace\Learning\learning\x64\Release\\learning1.exe" /NOLOGO /LIBPATH:D:\Qt\5.4\msvc2013_64\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Widgets.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"E:\桌面\Qt\WorkSpace\Learning\learning\x64\Release\learning1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\桌面\Qt\WorkSpace\Learning\learning\x64\Release\learning1.lib" /MACHINE:X64 x64\Release\1.1_hello.obj
+         x64\Release\qrc_learning1.obj
+         x64\Release\moc_learning1.obj
+         x64\Release\learning1.obj
+         learning1.vcxproj -> E:\桌面\Qt\WorkSpace\Learning\learning\x64\Release\learning1.exe
+     1>已完成生成项目“E:\桌面\Qt\WorkSpace\Learning\learning\learning1\learning1.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:00.05
+已用时间 00:00:01.24

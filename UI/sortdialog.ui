@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SortDialog</class>
+ <widget class="QDialog" name="SortDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>321</width>
+    <height>357</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Sort</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="primaryGroupBox">
+     <property name="title">
+      <string>&amp;Primary Key</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>39</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QComboBox" name="primaryOrderCombo">
+        <item>
+         <property name="text">
+          <string>Ascending</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Descending</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="primaryColumnLabel">
+        <property name="text">
+         <string>Column:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="primaryColumnCombo">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="primaryOrderLabel">
+        <property name="text">
+         <string>Order:</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="okButton">
+       <property name="text">
+        <string>OK</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelButton">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="moreButton">
+       <property name="text">
+        <string>&amp;More</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="secondaryGroupBox">
+     <property name="title">
+      <string>&amp;Secondary Key</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="1" column="0">
+       <widget class="QLabel" name="secondaryOrderLabel">
+        <property name="text">
+         <string>Order:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QComboBox" name="secondaryOrderCombo">
+        <item>
+         <property name="text">
+          <string>Ascending</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Descending</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="secondaryColumnLabel">
+        <property name="text">
+         <string>Column:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="secondaryColumnCombo">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="tertiaryGroupBox">
+     <property name="title">
+      <string>&amp;Tertiary Key</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="0">
+       <widget class="QLabel" name="tertiaryColumnLabel">
+        <property name="text">
+         <string>Column:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="tertiaryColumnCombo">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="tertiaryOrderLabel">
+        <property name="text">
+         <string>Order:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QComboBox" name="tertiaryOrderCombo">
+        <item>
+         <property name="text">
+          <string>Ascending</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Descending</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>okButton</tabstop>
+  <tabstop>cancelButton</tabstop>
+  <tabstop>moreButton</tabstop>
+  <tabstop>primaryColumnCombo</tabstop>
+  <tabstop>primaryOrderCombo</tabstop>
+  <tabstop>secondaryColumnCombo</tabstop>
+  <tabstop>secondaryOrderCombo</tabstop>
+  <tabstop>tertiaryColumnCombo</tabstop>
+  <tabstop>tertiaryOrderCombo</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>okButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SortDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>263</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>106</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SortDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>285</x>
+     <y>62</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>152</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>moreButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>secondaryGroupBox</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>274</x>
+     <y>131</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>191</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>moreButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>tertiaryGroupBox</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>295</x>
+     <y>134</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>184</x>
+     <y>294</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>
