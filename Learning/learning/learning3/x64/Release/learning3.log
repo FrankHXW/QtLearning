@@ -1,21 +1,8 @@
-﻿生成启动时间为 2015/8/10 22:37:44。
+﻿生成启动时间为 2015/8/11 16:49:26。
      1>项目“E:\桌面\Qt\WorkSpace\Learning\learning\learning3\learning3.vcxproj”在节点 2 上(Build 个目标)。
-     1>CustomBuild:
-         Moc'ing sortdialog.h...
-         Moc'ing mainwindow.h...
-         Moc'ing gotocelldialog.h...
-         Moc'ing finddialog.h...
-       ClCompile:
-         D:\Program Files (x86)\VS2013\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Qt\5.4\msvc2013_64\include /I.\GeneratedFiles\Release /ID:\Qt\5.4\msvc2013_64\include\QtCore /ID:\Qt\5.4\msvc2013_64\include\QtGui /ID:\Qt\5.4\msvc2013_64\include\QtWidgets /nologo /W1 /WX- /O2 /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt finddialog.cpp GeneratedFiles\Release\moc_finddialog.cpp GeneratedFiles\Release\moc_gotocelldialog.cpp GeneratedFiles\Release\moc_mainwindow.cpp GeneratedFiles\Release\moc_sortdialog.cpp gotocelldialog.cpp mainwindow.cpp sortdialog.cpp
-         finddialog.cpp
-         moc_finddialog.cpp
-         moc_gotocelldialog.cpp
-         moc_mainwindow.cpp
-         moc_sortdialog.cpp
-         gotocelldialog.cpp
+     1>ClCompile:
+         D:\Program Files (x86)\VS2013\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Qt\5.4\msvc2013_64\include /I.\GeneratedFiles\Release /ID:\Qt\5.4\msvc2013_64\include\QtCore /ID:\Qt\5.4\msvc2013_64\include\QtGui /ID:\Qt\5.4\msvc2013_64\include\QtWidgets /nologo /W1 /WX- /O2 /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt mainwindow.cpp
          mainwindow.cpp
-         sortdialog.cpp
-         正在生成代码...
        Link:
          D:\Program Files (x86)\VS2013\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\桌面\Qt\WorkSpace\Learning\learning\x64\Release\\learning3.exe" /NOLOGO /LIBPATH:D:\Qt\5.4\msvc2013_64\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Widgets.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"E:\桌面\Qt\WorkSpace\Learning\learning\x64\Release\learning3.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\桌面\Qt\WorkSpace\Learning\learning\x64\Release\learning3.lib" /MACHINE:X64 x64\Release\finddialog.obj
          x64\Release\qrc_learning3.obj
@@ -36,18 +23,13 @@
      1>moc_mainwindow.obj : error LNK2019: 无法解析的外部符号 "private: void __cdecl MainWindow::sort(void)" (?sort@MainWindow@@AEAAXXZ)，该符号在函数 "private: static void __cdecl MainWindow::qt_static_metacall(class QObject *,enum QMetaObject::Call,int,void * *)" (?qt_static_metacall@MainWindow@@CAXPEAVQObject@@W4Call@QMetaObject@@HPEAPEAX@Z) 中被引用
      1>moc_mainwindow.obj : error LNK2019: 无法解析的外部符号 "private: void __cdecl MainWindow::about(void)" (?about@MainWindow@@AEAAXXZ)，该符号在函数 "private: static void __cdecl MainWindow::qt_static_metacall(class QObject *,enum QMetaObject::Call,int,void * *)" (?qt_static_metacall@MainWindow@@CAXPEAVQObject@@W4Call@QMetaObject@@HPEAPEAX@Z) 中被引用
      1>moc_mainwindow.obj : error LNK2019: 无法解析的外部符号 "private: void __cdecl MainWindow::openRecentFile(void)" (?openRecentFile@MainWindow@@AEAAXXZ)，该符号在函数 "private: static void __cdecl MainWindow::qt_static_metacall(class QObject *,enum QMetaObject::Call,int,void * *)" (?qt_static_metacall@MainWindow@@CAXPEAVQObject@@W4Call@QMetaObject@@HPEAPEAX@Z) 中被引用
-     1>moc_mainwindow.obj : error LNK2019: 无法解析的外部符号 "private: void __cdecl MainWindow::updateStatusBar(void)" (?updateStatusBar@MainWindow@@AEAAXXZ)，该符号在函数 "private: static void __cdecl MainWindow::qt_static_metacall(class QObject *,enum QMetaObject::Call,int,void * *)" (?qt_static_metacall@MainWindow@@CAXPEAVQObject@@W4Call@QMetaObject@@HPEAPEAX@Z) 中被引用
-     1>moc_mainwindow.obj : error LNK2019: 无法解析的外部符号 "private: void __cdecl MainWindow::spreadsheetModified(void)" (?spreadsheetModified@MainWindow@@AEAAXXZ)，该符号在函数 "private: static void __cdecl MainWindow::qt_static_metacall(class QObject *,enum QMetaObject::Call,int,void * *)" (?qt_static_metacall@MainWindow@@CAXPEAVQObject@@W4Call@QMetaObject@@HPEAPEAX@Z) 中被引用
+     1>mainwindow.obj : error LNK2019: 无法解析的外部符号 "public: __cdecl Spreadsheet::Spreadsheet(class QWidget *)" (??0Spreadsheet@@QEAA@PEAVQWidget@@@Z)，该符号在函数 "public: __cdecl MainWindow::MainWindow(void)" (??0MainWindow@@QEAA@XZ) 中被引用
      1>mainwindow.obj : error LNK2001: 无法解析的外部符号 "protected: virtual void __cdecl MainWindow::closeEvent(class QCloseEvent *)" (?closeEvent@MainWindow@@MEAAXPEAVQCloseEvent@@@Z)
-     1>mainwindow.obj : error LNK2019: 无法解析的外部符号 "private: void __cdecl MainWindow::createMenus(void)" (?createMenus@MainWindow@@AEAAXXZ)，该符号在函数 "public: __cdecl MainWindow::MainWindow(void)" (??0MainWindow@@QEAA@XZ) 中被引用
-     1>mainwindow.obj : error LNK2019: 无法解析的外部符号 "private: void __cdecl MainWindow::createContextMenu(void)" (?createContextMenu@MainWindow@@AEAAXXZ)，该符号在函数 "public: __cdecl MainWindow::MainWindow(void)" (??0MainWindow@@QEAA@XZ) 中被引用
-     1>mainwindow.obj : error LNK2019: 无法解析的外部符号 "private: void __cdecl MainWindow::createToolBars(void)" (?createToolBars@MainWindow@@AEAAXXZ)，该符号在函数 "public: __cdecl MainWindow::MainWindow(void)" (??0MainWindow@@QEAA@XZ) 中被引用
      1>mainwindow.obj : error LNK2019: 无法解析的外部符号 "private: void __cdecl MainWindow::createStatusBar(void)" (?createStatusBar@MainWindow@@AEAAXXZ)，该符号在函数 "public: __cdecl MainWindow::MainWindow(void)" (??0MainWindow@@QEAA@XZ) 中被引用
-     1>mainwindow.obj : error LNK2019: 无法解析的外部符号 "private: void __cdecl MainWindow::readSettings(void)" (?readSettings@MainWindow@@AEAAXXZ)，该符号在函数 "public: __cdecl MainWindow::MainWindow(void)" (??0MainWindow@@QEAA@XZ) 中被引用
      1>mainwindow.obj : error LNK2019: 无法解析的外部符号 "private: void __cdecl MainWindow::setCurrentFile(class QString const &)" (?setCurrentFile@MainWindow@@AEAAXAEBVQString@@@Z)，该符号在函数 "public: __cdecl MainWindow::MainWindow(void)" (??0MainWindow@@QEAA@XZ) 中被引用
-     1>E:\桌面\Qt\WorkSpace\Learning\learning\x64\Release\\learning3.exe : fatal error LNK1120: 18 个无法解析的外部命令
+     1>E:\桌面\Qt\WorkSpace\Learning\learning\x64\Release\\learning3.exe : fatal error LNK1120: 13 个无法解析的外部命令
      1>已完成生成项目“E:\桌面\Qt\WorkSpace\Learning\learning\learning3\learning3.vcxproj”(Build 个目标)的操作 - 失败。
 
 生成失败。
 
-已用时间 00:00:08.94
+已用时间 00:00:02.25

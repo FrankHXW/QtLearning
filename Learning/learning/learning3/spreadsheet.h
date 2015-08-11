@@ -8,7 +8,11 @@ class Spreadsheet :public QTableWidget
 	Q_OBJECT
 public:
 	Spreadsheet(QWidget *parent = 0);
+	
 	bool autoRecalculate() const{ return autoRecalc; }
+	QString currentLocation() const;
+	QString currentFormula() const;
+
 
 public slots:
 	void cut();

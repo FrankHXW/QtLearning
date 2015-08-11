@@ -77,6 +77,9 @@
     <ClCompile Include="GeneratedFiles\Release\moc_sortdialog.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_spreadsheet.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="learning3.ui">
@@ -97,13 +100,13 @@
     <CustomBuild Include="sortdialog.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="spreadsheet.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_learning3.h">
       <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="spreadsheet.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
