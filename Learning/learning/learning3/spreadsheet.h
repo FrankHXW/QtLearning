@@ -41,9 +41,9 @@ private:
 class SpreadsheetCompare
 {
 public:
-	bool operator()(const QStringList &row1, const QSrtingList &row2) const;
+	bool operator()(const QStringList &row1, const QStringList &row2) const;
 	enum {KeyCount=3};
-	int keys[Keycount];
+	int keys[KeyCount];
 	bool ascending[KeyCount];
 };
 

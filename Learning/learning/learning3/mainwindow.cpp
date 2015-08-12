@@ -31,8 +31,9 @@ MainWindow::MainWindow()
 
 	findDialog = 0;
 
-	setWindowIcon(QIcon(":/images/icon.png"));
+	setWindowIcon(QIcon("./images/icon.png"));
 	setCurrentFile("");
+	setAttribute(Qt::WA_DeleteOnClose);  //delete this widget's memory when the widget has accepted the close event
 }
 
 
@@ -40,25 +41,25 @@ MainWindow::MainWindow()
 void MainWindow::createActions()
 {
 	newAction = new QAction(tr("&New"), this);
-	newAction->setIcon(QIcon(":/images/new.png"));
+	newAction->setIcon(QIcon("./images/new.png"));
 	newAction->setShortcut(QKeySequence::New);
-	newAction->setStatusTip(tr("create a new spreadsheet file"));
+	newAction->setStatusTip(tr("Create a new spreadsheet file"));
 	connect(newAction, SIGNAL(triggered()), this, SLOT(newFile()));
 
 	openAction = new QAction(tr("&Open..."), this);
-	openAction->setIcon(QIcon(":/images/open.png"));
+	openAction->setIcon(QIcon("./images/open.png"));
 	openAction->setShortcut(QKeySequence::Open);
-	openAction->setStatusTip(tr("open an existing spreadsheet file"));
+	openAction->setStatusTip(tr("Open an existing spreadsheet file"));
 	connect(openAction, SIGNAL(triggered()), this, SLOT(open()));
 
 	saveAction = new QAction(tr("&Save"), this);
-	saveAction->setIcon(QIcon(":/images/save.png"));
+	saveAction->setIcon(QIcon("./images/save.png"));
 	saveAction->setShortcut(QKeySequence::Save);
-	saveAction->setStatusTip(tr("save the current spreadsheet file"));
+	saveAction->setStatusTip(tr("Save the current spreadsheet file"));
 	connect(saveAction, SIGNAL(triggered()), this, SLOT(save()));
 
 	saveAsAction = new QAction(tr("Save &As..."), this);
-	saveAsAction->setStatusTip(tr("save the current file under a new name "));
+	saveAsAction->setStatusTip(tr("Save the current file under a new name "));
 	connect(saveAsAction, SIGNAL(triggered()), this, SLOT(saveAs()));
 
 	for (int i = 0; i < MaxRecentFiles; ++i){
@@ -67,61 +68,66 @@ void MainWindow::createActions()
 		connect(recentFileActions[i], SIGNAL(triggered()), this, SLOT(openRecentFile()));
 	}
 
+	closeAction = new QAction(tr("&Close"), this);
+	closeAction->setShortcut(QKeySequence::Close);
+	closeAction->setStatusTip(tr("Close this window"));
+	connect(closeAction, SIGNAL(triggered()), this, SLOT(close()));
+
 	exitAction = new QAction(tr("E&xit"), this);
 	exitAction->setShortcut(tr("Ctrl+Q"));
-	exitAction->setStatusTip(tr("exit the application"));
-	connect(exitAction, SIGNAL(triggered()), this, SLOT(close()));
+	exitAction->setStatusTip(tr("Exit the application"));
+	connect(exitAction, SIGNAL(triggered()), qApp, SLOT(closeAllWindows()));
 
 	cutAction = new QAction(tr("Cu&t"), this);
-	cutAction->setIcon(QIcon(":/images/cut.png"));
+	cutAction->setIcon(QIcon("./images/cut.png"));
 	cutAction->setShortcut(QKeySequence::Cut);
-	cutAction->setStatusTip(tr("cut the selected contents to the clipboard"));
+	cutAction->setStatusTip(tr("Cut the selected contents to the clipboard"));
 	connect(cutAction, SIGNAL(triggered()), spreadsheet, SLOT(cut()));
 
 	copyAction = new QAction(tr("&Copy"), this);
-	copyAction->setIcon(QIcon(":/images/copy.png"));
+	copyAction->setIcon(QIcon("./images/copy.png"));
 	copyAction->setShortcut(QKeySequence::Copy);
-	copyAction->setStatusTip(tr("copy the selected contents to the clipboard"));
+	copyAction->setStatusTip(tr("Copy the selected contents to the clipboard"));
 	connect(copyAction, SIGNAL(triggered()), spreadsheet, SLOT(copy()));
 
 	pasteAction = new QAction(tr("&Paste"), this);
-	pasteAction->setIcon(QIcon(":/images/paste.png"));
+	pasteAction->setIcon(QIcon("./images/paste.png"));
 	pasteAction->setShortcut(QKeySequence::Paste);
-	pasteAction->setStatusTip(tr("paste the clipboard's contents into the current selection"));
+	pasteAction->setStatusTip(tr("Paste the clipboard's contents into the current selection"));
 	connect(pasteAction, SIGNAL(triggered()), spreadsheet, SLOT(paste()));
 
 	deleteAction = new QAction(tr("&Delete"), this);
 	deleteAction->setShortcut(QKeySequence::Delete);
-	deleteAction->setStatusTip(tr("delete the selected contents"));
+	deleteAction->setStatusTip(tr("Delete the selected contents"));
 	connect(deleteAction, SIGNAL(triggered()), spreadsheet, SLOT(del()));
 
 	selectRowAction = new QAction(tr("&Row"), this);
-	selectRowAction->setStatusTip(tr("select all the cells in the current row"));
+	selectRowAction->setStatusTip(tr("Select all the cells in the current row"));
 	connect(selectRowAction, SIGNAL(triggered()), spreadsheet, SLOT(selectCurrentRow()));
 	
 	selectColumnAction = new QAction(tr("&Column"), this);
-	selectColumnAction->setStatusTip(tr("select all the cells in the current colum"));
+	selectColumnAction->setStatusTip(tr("Select all the cells in the current colum"));
 	connect(selectColumnAction, SIGNAL(triggered()), spreadsheet, SLOT(selectCurrentColumn()));
 
 	selectAllAction = new QAction(tr("&All"), this);
-	selectAllAction->setStatusTip(tr("select all the cells in the spreadsheet"));
+	selectAllAction->setStatusTip(tr("Select all the cells in the spreadsheet"));
 	connect(selectAllAction, SIGNAL(triggered()), spreadsheet, SLOT(selectAll())); //selectAll() is realized by QAbstractItemView
 
 	findAction = new QAction(tr("&Find..."), this);
-	findAction->setIcon(QIcon(":/images/find.png"));
+	findAction->setIcon(QIcon("./images/find.png"));
 	findAction->setShortcut(QKeySequence::Find);
 	findAction->setStatusTip(tr("Find a matched cell"));
 	connect(findAction, SIGNAL(triggered()), this, SLOT(find()));
 
 	goToCellAction = new QAction(tr("&Go to Cell..."), this);
-	goToCellAction->setIcon(QIcon(":/images/gotocell.png"));
+	goToCellAction->setIcon(QIcon("./images/gotocell.png"));
 	goToCellAction->setShortcut(tr("Ctrl+G"));
-	goToCellAction->setStatusTip(tr("go to the specified cell"));
+	goToCellAction->setStatusTip(tr("Go to the specified cell"));
 	connect(goToCellAction, SIGNAL(triggered()), this, SLOT(goToCell()));
 
 	recalculateAction = new QAction(tr("&Recalculate"), this);
 	recalculateAction->setShortcut(tr("F9"));
-	recalculateAction->setStatusTip(tr("recalculate all the spreadsheet's formulas"));
+	recalculateAction->setStatusTip(tr("Recalculate all the spreadsheet's formulas"));
 	connect(recalculateAction, SIGNAL(triggered()), spreadsheet, SLOT(recalculate()));
 
 	sortAction = new QAction(tr("&Sort..."), this);
@@ -131,21 +137,21 @@ void MainWindow::createActions()
 	showGridAction = new QAction(tr("&Show Grid"), this);
 	showGridAction->setCheckable(true);
 	showGridAction->setCheckable(spreadsheet->showGrid());
-	showGridAction->setStatusTip(tr("show or hide the spreadsheet's grid"));
+	showGridAction->setStatusTip(tr("Show or hide the spreadsheet's grid"));
 	connect(showGridAction, SIGNAL(toggled(bool)), spreadsheet, SLOT(setShowGrid(bool)));
 
 	autoRecalcAction = new QAction(tr("&Auto-Recalculate"), this);
 	autoRecalcAction->setCheckable(true);
 	autoRecalcAction->setCheckable(spreadsheet->autoRecalculate());
-	autoRecalcAction->setStatusTip(tr("switch auto-recalculate on or off"));
+	autoRecalcAction->setStatusTip(tr("Switch auto-recalculate on or off"));
 	connect(showGridAction, SIGNAL(toggled(bool)), spreadsheet, SLOT(setAutoRecalculate(bool)));
 
 	aboutAction = new QAction(tr("&About"), this);
-	aboutAction->setStatusTip(tr("show the application's information"));
+	aboutAction->setStatusTip(tr("Show the application's information"));
 	connect(aboutAction, SIGNAL(triggerd()), this, SLOT(about()));
 
 	aboutQtAction = new QAction(tr("About &Qt"), this);
-	aboutQtAction->setStatusTip(tr("show the Qt library's information"));
+	aboutQtAction->setStatusTip(tr("Show the Qt library's information"));
 	connect(aboutQtAction, SIGNAL(triggerd()), qApp, SLOT(aboutQt()));
 
 }
@@ -163,6 +169,7 @@ void MainWindow::createMenus()
 		fileMenu->addAction(recentFileActions[i]);
 	}
 	fileMenu->addSeparator();
+	fileMenu->addAction(closeAction);
 	fileMenu->addAction(exitAction);
 
 	editMenu = menuBar()->addMenu(tr("&Edit"));
@@ -252,10 +259,13 @@ void MainWindow::spreadsheetModified()
 
 void MainWindow::newFile()
 {
-	if (okToContinue()){
-		spreadsheet->clear();
-		setCurrentFile("");
-	}
+	//if (okToContinue()){
+	//	spreadsheet->clear();
+	//	setCurrentFile("");
+	//}
+	MainWindow *mainWin = new MainWindow;
+	mainWin->show();
+
 }
 
 
@@ -343,13 +353,17 @@ void MainWindow::setCurrentFile(const QString &fileName)
 		shownName = strippedName(curFile);
 		recentFiles.removeAll(curFile);		//Removes all occurrences of value curFile in the list
 		recentFiles.prepend(curFile);		//Inserts value at the beginning of the list
-		updateRecentFileActions();
+
+		foreach(QWidget *win, QApplication::topLevelWidgets()){		//for each window call updateRecentFileActions,all window should call it.(P57)
+			if (MainWindow *mainWin=qobject_cast<MainWindow *>(win))
+				mainWin->updateRecentFileActions();
+		}
 	}
 	setWindowTitle(tr("%1[*] - %2").arg(shownName).arg(tr("Spreadsheet")));
 }
 
 
-QString strippedName(const QString &fullFileName)
+QString MainWindow::strippedName(const QString &fullFileName)
 {
 	return QFileInfo(fullFileName).fileName();	//return file name excluding path
 }
@@ -429,4 +443,29 @@ void MainWindow::about()
 	QMessageBox::about(this, tr("About Spreadsheet"), tr("<h2>Spreadsheetr 1.0</h2><p>Copyright &copy; 2015 Software Inc."
 		"<p>Spreadsheet is a small application that demonstrates QAction, QMainWindow, QMenuBar, QStatusBar, "
 		"QTableWidget, QToolBar,and any other Qt classes."));
+}
+
+void MainWindow::writeSettings()
+{
+	QSettings settings("Software Inc", "Spreadsheet");
+	settings.setValue("geometry", saveGeometry());
+	settings.setValue("recentFiles", recentFiles);
+	settings.setValue("showGrid", showGridAction->isChecked());
+	settings.setValue("autoRecalc", autoRecalcAction->isChecked());
+}
+
+void MainWindow::readSettings()
+{
+	QSettings settings("Software Inc", "Spreadsheet");
+	restoreGeometry(settings.value("geometry").toByteArray());
+	recentFiles = settings.value("recentFiles").toStringList();
+	foreach(QWidget *win, QApplication::topLevelWidgets()){		//for each window call updateRecentFileActions,all window should call it.(P57)
+		if (MainWindow *mainWin = qobject_cast<MainWindow *>(win))
+			mainWin->updateRecentFileActions();
+	}
+	bool showGrid = settings.value("showGrid", true).toBool();
+	showGridAction->setChecked(showGrid);
+
+	bool autoRecalc = settings.value("autoRecalc", true).toBool();
+	autoRecalcAction->setChecked(autoRecalc);
 }

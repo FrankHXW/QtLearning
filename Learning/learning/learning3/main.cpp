@@ -3,17 +3,14 @@
 #include<QComboBox>
 #include <QStyleFactory>
 
+#include"mainwindow.h"
 
 int main(int argc, char *argv[])
 {
-	QApplication::setStyle("WindowsVista");
+	QApplication::setStyle("Fusion");
 	QApplication app(argc, argv);
 
-	QComboBox *styleComboBox = new QComboBox;
-	styleComboBox->addItems(QStyleFactory::keys());
-	styleComboBox->show();
-
-	QLabel label("<h2><i>Hello</i>" "<font color=red> Qt!</font></h2>");
-	label.show();
+	MainWindow *mainWin=new MainWindow;
+	mainWin->show();
 	return app.exec();
 }

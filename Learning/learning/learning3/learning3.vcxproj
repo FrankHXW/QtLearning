@@ -192,6 +192,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainwindow.cpp" />
     <ClCompile Include="sortdialog.cpp" />
+    <ClCompile Include="spreadsheet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="learning3.ui">

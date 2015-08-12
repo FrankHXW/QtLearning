@@ -8,6 +8,8 @@ class QLabel;
 class FindDialog;
 class Spreadsheet;
 
+
+
 class MainWindow : public QMainWindow
 {
 	Q_OBJECT
@@ -47,7 +49,7 @@ private:
 	QLabel *locationLabel;
 	QLabel *formulaLabel;
 
-	QStringList recentFiles;
+	QStringList recentFiles;   //each window's recentFiles are the same,P57 
 	QString curFile;
 	enum {MaxRecentFiles=5};
 	QAction *recentFileActions[MaxRecentFiles];
@@ -65,6 +67,7 @@ private:
 	QAction *openAction;
 	QAction *saveAction;
 	QAction *saveAsAction;
+	QAction *closeAction;
 	QAction *exitAction;
 	QAction *cutAction;
 	QAction *copyAction;
@@ -83,5 +86,8 @@ private:
 	QAction *aboutQtAction;
 
 };
+
+
+
 
 #endif 
