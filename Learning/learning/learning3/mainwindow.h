@@ -18,8 +18,8 @@ protected:
 private slots:
 	void newFile();
 	void open();
-	void save();
-	void saveAs();
+	bool save();
+	bool saveAs();
 	void find();
 	void goToCell();
 	void sort();
@@ -36,19 +36,19 @@ private:
 	void readSettings();
 	void writeSettings();
 	bool okToContinue();
-	bool loadFile(const QString &filename);
-	bool saveFile(const QString &filename);
-	void setCurrentFile(const QString &filename);
+	bool loadFile(const QString &fileName);
+	bool saveFile(const QString &fileName);
+	void setCurrentFile(const QString &fileName);
 	void updateRecentFileActions();
-	QString strippedname(const QString &fullFileName);
+	QString strippedName(const QString &fullFileName);
 
 	Spreadsheet *spreadsheet;
 	FindDialog *findDialog;
 	QLabel *locationLabel;
 	QLabel *formulaLabel;
+
 	QStringList recentFiles;
 	QString curFile;
-
 	enum {MaxRecentFiles=5};
 	QAction *recentFileActions[MaxRecentFiles];
 	QAction *separatorAction;

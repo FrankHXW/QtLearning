@@ -5,6 +5,8 @@
 #include<QLayout>
 #include<QMenuBar>
 #include<QStatusBar>
+#include<QMessageBox>
+#include<QFileDialog>
 
 #include "finddialog.h"
 #include "gotocelldialog.h"
@@ -246,4 +248,185 @@ void MainWindow::spreadsheetModified()
 {
 	setWindowModified(true);
 	updateStatusBar();
+}
+
+void MainWindow::newFile()
+{
+	if (okToContinue()){
+		spreadsheet->clear();
+		setCurrentFile("");
+	}
+}
+
+
+bool MainWindow::okToContinue()
+{
+	if (isWindowModified()){
+		int r = QMessageBox::warning(this, tr("Spreadsheet"), tr("The Document has been modified .\n"
+			"Do you want to save changes?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
+		if (r == QMessageBox::Yes){
+			return save();
+		}
+		else if (r == QMessageBox::Cancel){
+			return false;
+		}
+	}
+	return true;
+}
+
+void MainWindow::open()
+{
+	if (okToContinue()){
+		QString fileName = QFileDialog::getOpenFileName(this, tr("Open Spreadsheet"), ".", tr("Spreadsheet files(*.sp)"));
+		if (!fileName.isEmpty())
+			loadFile(fileName);
+	}
+}
+
+bool MainWindow::loadFile(const QString &fileName)
+{
+	if (!spreadsheet->readFile(fileName)){
+		statusBar()->showMessage(tr("Loading canceled"), 2000);
+		return false;
+	}
+	setCurrentFile(fileName);
+	statusBar()->showMessage(tr("File loaded"), 2000);
+	return true;
+}
+
+bool MainWindow::save()
+{
+	if (curFile.isEmpty()){
+		return saveAs();
+	}
+	else {
+		return saveFile(curFile);
+	}
+}
+
+bool MainWindow::saveAs()
+{
+	QString fileName = QFileDialog::getSaveFileName(this, tr("Save Spreadsheet"), ".", tr("Spreadsheet files(*.sp)"));
+	if (fileName.isEmpty())
+		return false;
+	return saveFile(fileName);
+}
+
+bool MainWindow::saveFile(const QString &fileName)
+{
+	if (!spreadsheet->writeFile(fileName)){
+		statusBar()->showMessage(tr("Saving canceled"), 2000);
+		return false;
+	}
+	setCurrentFile(fileName);
+	statusBar()->showMessage(tr("File saved"), 2000);
+	return true;
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)  //re-implement QWidget::closeEvent(),to make sure close or not
+{
+	if (okToContinue()){
+		writeSettings();
+		event->accept();
+	}
+	else{
+		event->ignore();
+	}
+}
+
+void MainWindow::setCurrentFile(const QString &fileName)
+{
+	curFile = fileName;
+	setWindowModified(false);
+	QString shownName = tr("Untitled");
+	if (!curFile.isEmpty()){
+		shownName = strippedName(curFile);
+		recentFiles.removeAll(curFile);		//Removes all occurrences of value curFile in the list
+		recentFiles.prepend(curFile);		//Inserts value at the beginning of the list
+		updateRecentFileActions();
+	}
+	setWindowTitle(tr("%1[*] - %2").arg(shownName).arg(tr("Spreadsheet")));
+}
+
+
+QString strippedName(const QString &fullFileName)
+{
+	return QFileInfo(fullFileName).fileName();	//return file name excluding path
+}
+
+
+void MainWindow::updateRecentFileActions()
+{
+	QMutableStringListIterator i(recentFiles);
+	while (i.hasNext()){
+		if (!QFile::exists(i.next()))   //remove the non-exist file,next() releaize iterator
+			i.remove();
+	}
+	for (int j = 0; j < MaxRecentFiles; ++j){
+		if (j < recentFiles.count()){
+			QString text = tr("&%1 %2").arg(j + 1).arg(strippedName(recentFiles[j]));
+			recentFileActions[j]->setText(text);				//save file name excluding path 
+			recentFileActions[j]->setData(recentFiles[j]);		//QVariant::data
+			recentFileActions[j]->setVisible(true);
+		}
+		else{
+			recentFileActions[j]->setVisible(false);		//hide other action
+		}
+	}
+	separatorAction->setVisible(!recentFiles.isEmpty());	//setting separator visible if existing more than one file
+}
+
+void MainWindow::openRecentFile()
+{
+	if (okToContinue()){
+		QAction *action = qobject_cast<QAction *>(sender());//sender():Returns a pointer to the object that sent the signal
+		if (action)											//qobject_cast:transfer pointer of QObject into pointer of QAction
+			loadFile(action->data().toString());
+	}
+}
+
+void MainWindow::find()
+{
+	if (!findDialog){
+		findDialog = new FindDialog(this);
+		connect(findDialog, SIGNAL(findNext(const QString &, Qt::CaseSensitivity)), spreadsheet, SLOT(findNext(const QString &, Qt::CaseSensitivity)));
+		connect(findDialog, SIGNAL(findPrevious(const QString &, Qt::CaseSensitivity)), spreadsheet, SLOT(findPrevious(const QString &, Qt::CaseSensitivity)));
+	}
+	findDialog->show();			//show() is modeless
+	findDialog->raise();		//raise the window above other window
+	findDialog->activateWindow(); //An active window is a visible top-level window that has the keyboard input focus
+}
+
+
+void MainWindow::goToCell()
+{
+	GoToCellDialog dialog(this);
+	if (dialog.exec()){				//exec() is modal
+		QString str = dialog.lineEdit->text().toUpper();
+		spreadsheet->setCurrentCell(str.mid(1).toInt() - 1, str[0].unicode() - 'A');
+	}
+}
+
+void MainWindow::sort()
+{
+	SortDialog dialog(this);
+	QTableWidgetSelectionRange range = spreadsheet->selectedRange();
+	dialog.setColumnRange('A' + range.leftColumn(), 'A' + range.rightColumn());
+
+	if (dialog.exec()){
+		SpreadsheetCompare compare;
+		compare.keys[0] = dialog.primaryColumnCombo->currentIndex();
+		compare.keys[1] = dialog.secondaryColumnCombo->currentIndex() - 1;
+		compare.keys[2] = dialog.tertiaryColumnCombo->currentIndex() - 1;
+		compare.ascending[0] = (dialog.primaryOrderCombo->currentIndex() == 0);
+		compare.ascending[1] = (dialog.secondaryOrderCombo->currentIndex() == 0);
+		compare.ascending[2] = (dialog.tertiaryOrderCombo->currentIndex() == 0);
+	}
+}
+
+void MainWindow::about()
+{
+	QMessageBox::about(this, tr("About Spreadsheet"), tr("<h2>Spreadsheetr 1.0</h2><p>Copyright &copy; 2015 Software Inc."
+		"<p>Spreadsheet is a small application that demonstrates QAction, QMainWindow, QMenuBar, QStatusBar, "
+		"QTableWidget, QToolBar,and any other Qt classes."));
 }

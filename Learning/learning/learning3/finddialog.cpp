@@ -60,7 +60,7 @@ void FindDialog::findClicked()
 		emit findPrevious(text, cs);
 	}
 	else
-		findNext(text, cs);
+		emit findNext(text, cs);
 }
 
 

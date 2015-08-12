@@ -80,6 +80,9 @@
     <ClCompile Include="GeneratedFiles\Debug\moc_spreadsheet.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_spreadsheet.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="learning3.ui">
